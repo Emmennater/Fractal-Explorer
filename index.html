@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script src="https://webglfundamentals.org/webgl/resources/m3.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <canvas id="mycanvas" width="800" height="800" z-index="-2">
+      HTML5 Canvas is not supported
+    </canvas>
+    
+    <div id="settings" style="visibility: visible;">
+      <span id="hsb-label" class="heading">Press C to Toggle Settings</span>
+      <span id="hsb-label">HSB Offset: 100</span>
+      <input id="hsboffset" type="range", min="0", max="255" value="100" class="slider">
+      <span id="iter-label">Iterations: 500</span>
+      <input id="iterations" type="range", min="2", max="1000" class="slider">
+    </div>
+    
+    <main>
+    </main>
+    <script src="src/shaders.js"></script>
+    <script src="src/shaders/vertex-shader.js"></script>
+    <script src="src/shaders/fragment-shader.js"></script>
+    
+    <script src="src/actions.js"></script>
+    <script src="src/elements.js"></script>
+    <script src="src/webgl.js"></script>
+    <script src="src/gl-builder.js"></script>
+    <script src="src/start.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
