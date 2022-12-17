@@ -27,6 +27,12 @@ span {
   margin-bottom: 0px;
 }
 
+#mandel-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  translate: 0px -2px;
+}
+
 .heading {
   width: 100%;
   background: #ffffff11;

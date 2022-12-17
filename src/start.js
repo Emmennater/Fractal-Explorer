@@ -67,6 +67,7 @@ function setup() {
   data.hsboffUniform = gl.getUniformLocation(program, "hsboff");
   data.iterationsUniform = gl.getUniformLocation(program, "iterations");
   data.rangeUniform = gl.getUniformLocation(program, "range");
+  data.domandelUniform = gl.getUniformLocation(program, "domandel");
   updateAspectRatio();
   
   requestAnimationFrame(()=>animate(gl, program));
@@ -105,6 +106,7 @@ function updateUniforms(gl, program) {
   gl.uniform1i(data.hsboffUniform, data.hsboff);
   gl.uniform1i(data.iterationsUniform, data.iterations);
   gl.uniform1f(data.rangeUniform, data.range);
+  gl.uniform1i(data.domandelUniform, data.domandel);
 }
 
 function updateAspectRatio() {

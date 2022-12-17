@@ -2,7 +2,7 @@ function colToBin(r, g, b) {
     return ((b << 8) + g << 8) + r;
 }
 
-
+var glsl = (e)=>{ return e; };
 
 
 

@@ -1,4 +1,4 @@
-var vtShaderSrc = `
+var vtShaderSrc = glsl`
 
 precision mediump float;
 

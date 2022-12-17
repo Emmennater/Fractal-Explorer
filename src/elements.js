@@ -8,6 +8,7 @@ function setupElements() {
     const hsboffset = document.getElementById("hsboffset");
     const iterations = document.getElementById("iterations");
     const spread = document.getElementById("spread");
+    const mandelbrot = document.getElementById("mandelbrot");
     const hsbLabel = document.getElementById("hsb-label");
     const iterLabel = document.getElementById("iter-label");
     const spreadLabel = document.getElementById("spread-label");
@@ -29,6 +30,9 @@ function setupElements() {
     spread.addEventListener("input", (e)=>{
         spreadLabel.innerHTML = "Spread: " + spread.value;
         data.range = spread.value;
+    });
+    mandelbrot.addEventListener("input", (e)=>{
+        data.domandel = mandelbrot.checked;
     });
 
     data.settingsVisible = true;
