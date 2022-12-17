@@ -18,7 +18,7 @@ function setup() {
     consta: -0.6975,
     constb: 0.275,
     hsboff: 100,
-    iterations: 500,
+    iterations: 130,
     range: 1.0
   };
 

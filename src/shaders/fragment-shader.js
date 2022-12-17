@@ -1,6 +1,7 @@
 var fgShaderSrc = glsl`
 
 precision mediump float;
+precision highp int;
 // precision highp float;
 
 varying vec2 fragTex;
@@ -77,21 +78,21 @@ vec3 mandelbrot(float x, float y) {
   float b = (x + yOff) * zoom;
   float ca = a;
   float cb = b;
-  
-  float npow = 1.0;
 
   for (int n=0; n<1000; n++) {
     if (n == iterations) {
       break;
     }
+    
     float d = sqrt(a*a + b*b);
 
     if (d > 4.0) {
       // float V = log(d) / K; // npow
       // float V = d;
-      float V = log(d) / npow; // change d to a or b for crazy
+      float V = log(d) / pow(2.0, float(modulo(n, 73))); // change d to a or b for crazy
       float x = log(V) / log(2.0) * range;
       return g(x);
+      // return vec3(d, d, d);
     }
 
     float aa = a*a - b*b;
@@ -104,8 +105,6 @@ vec3 mandelbrot(float x, float y) {
       a = aa + consta;
       b = bb + constb;
     }
-
-    npow = npow * 2.0;
   }
 
   // float a2 = a;
