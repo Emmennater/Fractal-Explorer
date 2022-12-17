@@ -13,6 +13,7 @@ uniform float constb;
 uniform float aspect;
 uniform int hsboff;
 uniform int iterations;
+uniform float range;
 
 int modulo(int num, int divisor) {
     return (num - divisor * (num / divisor));
@@ -88,18 +89,18 @@ vec3 mandelbrot(float x, float y) {
       l = 0.0;
   }
 
-  float L = (sin(l) + 1.0) / 2.0;
-  // return hsv2rgb(vec3(
-  //   float(modulo(int(L * 255.0) + hsboff, 255)) / 255.0,
-  //   180.0 / 255.0,
-  //   l * 2.0
-  // ));
-
+  float L = (sin(l) + 1.0) * range;
   return hsv2rgb(vec3(
-    float(modulo(int(l * 255.0) + hsboff, 255)) / 255.0,
+    float(modulo(int(L * 255.0) + hsboff, 255)) / 255.0,
     180.0 / 255.0,
     l * 2.0
   ));
+
+  // return hsv2rgb(vec3(
+  //   float(modulo(int(l * 255.0) + hsboff, 255)) / 255.0,
+  //   180.0 / 255.0,
+  //   l * 2.0
+  // ));
 }
 
 void main() {

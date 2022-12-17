@@ -18,7 +18,8 @@ function setup() {
     consta: -0.6975,
     constb: 0.275,
     hsboff: 100,
-    iterations: 500
+    iterations: 500,
+    range: 1.0
   };
 
   data.test = 0;
@@ -65,6 +66,7 @@ function setup() {
   data.matrixUniform = gl.getUniformLocation(program, "u_matrix");
   data.hsboffUniform = gl.getUniformLocation(program, "hsboff");
   data.iterationsUniform = gl.getUniformLocation(program, "iterations");
+  data.rangeUniform = gl.getUniformLocation(program, "range");
   updateAspectRatio();
   
   requestAnimationFrame(()=>animate(gl, program));
@@ -102,6 +104,7 @@ function updateUniforms(gl, program) {
   gl.uniform1f(data.constbUniform, data.constb);
   gl.uniform1i(data.hsboffUniform, data.hsboff);
   gl.uniform1i(data.iterationsUniform, data.iterations);
+  gl.uniform1f(data.rangeUniform, data.range);
 }
 
 function updateAspectRatio() {

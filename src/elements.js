@@ -7,8 +7,10 @@ function setupElements() {
     const settings = document.getElementById("settings");
     const hsboffset = document.getElementById("hsboffset");
     const iterations = document.getElementById("iterations");
+    const spread = document.getElementById("spread");
     const hsbLabel = document.getElementById("hsb-label");
     const iterLabel = document.getElementById("iter-label");
+    const spreadLabel = document.getElementById("spread-label");
 
     settings.addEventListener("mouseenter", ()=>{
         keys.busy = true;
@@ -23,6 +25,10 @@ function setupElements() {
     iterations.addEventListener("input", (e)=>{
         iterLabel.innerHTML = "Iterations: " + iterations.value;
         data.iterations = iterations.value;
+    });
+    spread.addEventListener("input", (e)=>{
+        spreadLabel.innerHTML = "Spread: " + spread.value;
+        data.range = spread.value;
     });
 
     data.settingsVisible = true;
